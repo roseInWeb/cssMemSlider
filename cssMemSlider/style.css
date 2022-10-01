@@ -1,0 +1,132 @@
+body {
+    background-color: darkslategrey;
+    color: #fff;
+    margin: 0;
+}
+
+.wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 218.75%;
+    text-align: center;
+    font-family: 'Water Brush';
+    margin: 5px auto;
+}
+
+.img {
+    display: flex;
+    width: 95%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.mem {
+    width: 100%;
+    border-radius: 10px;
+    transition: all 0.6s ease;
+}
+
+.block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+    margin: 1.56% auto;
+}
+
+.describe {
+    display: none;
+    font-family: Syne Tactile;
+    font-size: 125%;
+}
+
+.btn-controls {
+    display: flex;
+    flex-direction: row;
+}
+
+.control {
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.control:hover .btn{
+    border: 2px solid #fff;
+    background-color: #fff;
+}
+.control:active .btn {
+    background-color: #fff;
+    border: 2px solid #fff;
+}
+
+input {
+    display: none;
+}
+
+.btn {
+    width: 10px;
+    height: 10px;
+    margin: 0;
+    border-radius: 50%;
+    border: 2px solid #7fffd4;
+    background-color: #7fffd4;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    border: 2px solid #fff;
+    transform: scale(1.1);
+}
+
+.btn:active {
+    background-color: #fff;
+    border: 2px solid #fff;
+    transform: scale(1.1);
+}
+
+#r1:checked ~ .img > .s1 {
+    margin-left: 0;
+}
+#r2:checked ~ .img > .s1 {
+    margin-left: -100%;
+}
+#r3:checked ~ .img > .s1 {
+    margin-left: -200%;
+}
+#r4:checked ~ .img > .s1 {
+    margin-left: -300%;
+}
+
+#r1:checked ~ .block > .btn-controls > .control > .c1,
+#r2:checked ~ .block > .btn-controls > .control > .c2,
+#r3:checked ~ .block > .btn-controls > .control > .c3,
+#r4:checked ~ .block > .btn-controls > .control > .c4 {
+    background-color: transparent;
+}
+
+#r1:checked ~ .block > .describes > .d1,
+#r2:checked ~ .block > .describes > .d2,
+#r3:checked ~ .block > .describes > .d3,
+#r4:checked ~ .block > .describes > .d4 {
+    display: block;
+	transition: 0.5s;
+	transform: translateX(0);
+}
+
+@media (max-width: 440px) {
+    .block {
+        flex-direction: column-reverse;
+    }
+
+    .describe {
+        margin-top: 1.56%;
+    }
+}
